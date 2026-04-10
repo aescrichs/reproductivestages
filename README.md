@@ -11,14 +11,6 @@ This repository contains the code supporting the analyses reported in:
 ```
 reproductivestages/
 │
-├── data/
-│   ├── dataset_matrix.mat
-│   ├── data_women.csv
-│   ├── data_men.csv
-│   ├── ignitionmeta.mat
-│   ├── metamen.mat
-│   └── Schaefer2018_100Parcels_7Networks_order_FSLMNI152_2mm.Centroid_RAS.csv
-│
 ├── dynamical_complexity/
 │   ├── Ignition_SingleSubject.m          # Computes node-metastability per subject
 │   ├── demean.m                          # Helper function
@@ -36,8 +28,11 @@ reproductivestages/
 │   ├── ML_multiclass.py                      # Multiclass classification across all 5 reproductive stages
 │   └── ML_pairwise.py                        # Pairwise classification across stage transitions (Fig. 4)
 │
+├── Schaefer2018_100Parcels_7Networks_order_FSLMNI152_2mm.Centroid_RAS.csv   # Schaefer atlas region names
 └── README.md
 ```
+
+The Schaefer 100-parcel atlas file is publicly available at https://github.com/ThomasYeoLab.
 
 ---
 
