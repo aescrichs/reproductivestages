@@ -20,9 +20,10 @@ reproductivestages/
 │   └── brain_dynamics_rsn_comparison.py      # RSN-level dynamics (Supplementary Fig. S2)
 │
 ├── prediction/
-│   ├── brain_reproductive_stage_women.py     # Whole-brain prediction of reproductive stage
-│   ├── brain_cognition_prediction.py         # Prediction of cognitive performance from brain dynamics (Fig. 3)
-│   └── brain_sex_interaction_prediction.py   # Sex × brain interaction prediction
+│   ├── brain_reproductive_stage_women_prediction.py  # Whole-brain prediction of reproductive stage
+│   ├── brain_cognition_prediction.py                 # Prediction of cognitive performance from brain dynamics (Fig. 3)
+│   ├── brain_hormones_prediction.py                  # Prediction of FSH and estradiol from brain dynamics (Fig. 1D)
+│   └── brain_sex_interaction_prediction.py           # Sex × brain interaction prediction
 │
 ├── classification/
 │   ├── ML_multiclass.py                      # Multiclass classification across all 5 reproductive stages
@@ -80,15 +81,18 @@ The MATLAB script `Ignition_SingleSubject.m` computes node-metastability for eac
 
 ```bash
 cd prediction
-python brain_reproductive_stage_women.py
+python brain_reproductive_stage_women_prediction.py
 python brain_cognition_prediction.py
+python brain_hormones_prediction.py
 python brain_sex_interaction_prediction.py
 ```
 
 **Outputs:**
 - `reproductive_stage_results.csv` — Pearson R and p-value
 - `cognitive_prediction_results.csv` — R, p, p_FDR per cognitive domain
+- `hormones_prediction_results.csv` — R, p, p_FDR for FSH and estradiol
 - `figure3.pdf / .png` — scatter observed vs predicted (Fig. 3)
+- `figure_hormones_prediction.pdf / .png` — FSH and estradiol prediction (Fig. 1D)
 - `figure_sex_interaction.pdf / .png`
 
 ---
