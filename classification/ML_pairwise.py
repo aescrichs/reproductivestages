@@ -187,7 +187,7 @@ def run_classification(df):
                     }))
                     best_params_per_fold.append(grid_search.best_params_)
 
-                # â”€â”€ Feature importance aggregation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                # Feature importance aggregation 
                 feature_stats = defaultdict(
                     lambda: {'sum_imp': 0.0, 'count': 0, 'imp_list': []})
                 for fold_df in feature_importances_per_fold:
@@ -219,7 +219,7 @@ def run_classification(df):
                 df_all_imp = pd.concat(
                     feature_importances_per_fold, ignore_index=True)
 
-                # â”€â”€ Metrics â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                # Metrics 
                 auc    = roc_auc_score(y_encoded, all_y_proba)
                 report = classification_report(
                     y_encoded, all_y_pred,
@@ -248,7 +248,7 @@ def run_classification(df):
 
                 all_results.append(result)
 
-                # â”€â”€ Feature importance figure (Nature Aging style) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                # Feature importance figure (Nature Aging style) 
                 if not feat_df.empty:
                     top15_df = feat_df.sort_values(
                         'Mean_Importance', ascending=False).head(15)
@@ -299,7 +299,7 @@ def run_classification(df):
                     fig.savefig(fname, dpi=300, bbox_inches='tight')
                     plt.close(fig)   # never plt.show() inside a loop
 
-    # â”€â”€ Save final results â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # Save final results
     results_df = pd.DataFrame(all_results)
     timestamp  = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_csv    = f'classification_results_{timestamp}.csv'
