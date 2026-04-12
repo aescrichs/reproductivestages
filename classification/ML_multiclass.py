@@ -180,7 +180,7 @@ def run_classification(df):
                     'Fold':       fold + 1
                 }))
 
-            # â”€â”€ Feature importance aggregation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            # Feature importance aggregation 
             feature_stats = defaultdict(
                 lambda: {'sum_imp': 0.0, 'count': 0, 'imp_list': []})
             for fold_df in feature_importances_per_fold:
@@ -216,7 +216,7 @@ def run_classification(df):
                 'Selection_Frequency': '{:.1%}'.format
             }))
 
-            # â”€â”€ Metrics â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            # Metrics 
             y_original      = le.inverse_transform(y_encoded)
             y_pred_original = le.inverse_transform(all_y_pred)
             target_names    = [group_names[i] for i in sorted(group_names.keys())]
@@ -259,7 +259,7 @@ def run_classification(df):
                 result[f'support_{gname}']   = report[gname]['support']
             all_results.append(result)
 
-            # â”€â”€ Feature importance figure (Nature Aging style) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            # Feature importance figure (Nature Aging style)
             if not feat_df.empty:
                 top15_df   = feat_df.head(15)
                 order      = top15_df['Feature'].tolist()
@@ -308,7 +308,7 @@ def run_classification(df):
                 fig.savefig(f'{fname}.pdf', format='pdf', bbox_inches='tight')
                 plt.close(fig)
 
-    # â”€â”€ Save results â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # Save results 
     results_df = pd.DataFrame(all_results)
     timestamp  = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_csv    = f'multiclass_results_{timestamp}.csv'
