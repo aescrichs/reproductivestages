@@ -2,13 +2,11 @@
 Multiclass classification of menopausal groups 
 Brain dynamics -> menopausal stage classification (HCP-A women)
 
-Pipeline: KNNImputer -> StandardScaler -> [SMOTE] -> SelectKBest(k=20, f_classif)
-          -> XGBoost / RandomForest
 Cross-validation: Stratified outer CV, 3-fold inner RandomizedSearchCV
 Metrics: Accuracy, Balanced Accuracy, F1-macro, F1-weighted
 Output: results CSV + feature importance plots (top 15, Nature Aging style)
 
-Note: All 4 model combinations (XGBoost/RF — No resampling/SMOTE) are
+Note: All 4 model combinations (XGBoost/RF â€” No resampling/SMOTE) are
 evaluated to select the best-performing model for the main analysis.
 Final model selection is based on F1-macro on the held-out test folds.
 SMOTE is applied inside ImbPipeline, ensuring it only affects training folds
@@ -284,10 +282,10 @@ def run_classification(df):
                     xerr=top15_df['Std_Importance'],
                     fmt='D', color='#c2185b', markersize=7,
                     capsize=4, elinewidth=1.5,
-                    zorder=3, label='Mean ± SD')
+                    zorder=3, label='Mean Â± SD')
 
                 ax.set_xlim(left=0)
-                ax.set_xlabel('Feature Importance (individual folds + mean ± SD)')
+                ax.set_xlabel('Feature Importance (individual folds + mean Â± SD)')
                 ax.set_ylabel('')
                 ax.set_title(
                     f'Feature Importance: Multiclass ({clf_name}, {resampler_name})',
