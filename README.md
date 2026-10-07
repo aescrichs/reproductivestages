@@ -2,7 +2,7 @@
 
 This repository contains the code supporting the analyses reported in:
 
-> Escrichs et al. *Shifting hierarchies of brain dynamics, hormones, and cognition characterize women's reproductive aging.* Nature Aging (under review).
+> Escrichs et al. *Shifting hierarchies of brain dynamics, hormones, and cognition characterize women's reproductive aging.* (under review).
 
 ---
 
