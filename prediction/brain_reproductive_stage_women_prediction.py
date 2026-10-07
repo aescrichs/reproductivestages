@@ -157,7 +157,7 @@ print("\nSaved: reproductive_stage_results.csv")
 print("Saved: reproductive_stage_top_nodes.csv")
 
 # =============================================================================
-# 4. FIGURE — observed vs predicted (Nature Aging style)
+# 4. FIGURE — observed vs predicted 
 # =============================================================================
 
 fig, ax = plt.subplots(figsize=(3.54, 3.54))   # 90mm x 90mm (Nature half-width)
