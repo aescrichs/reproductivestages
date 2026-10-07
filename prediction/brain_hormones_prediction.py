@@ -149,7 +149,7 @@ results_df.to_csv('hormones_prediction_results.csv', index=False)
 print("\nSaved: hormones_prediction_results.csv")
 
 # =============================================================================
-# 4. FIGURE — observed vs predicted (Nature Aging style)
+# 4. FIGURE — observed vs predicted
 # =============================================================================
 
 sig_targets = results_df[results_df['p_fdr'] < 0.05]['Target'].tolist()
