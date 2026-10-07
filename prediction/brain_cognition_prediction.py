@@ -187,7 +187,7 @@ print("\nSaved: cognitive_prediction_results.csv")
 print("Saved: cognitive_prediction_top_regions.csv")
 
 # =============================================================================
-# 5. FIGURE — observed vs predicted (Nature Aging style)
+# 5. FIGURE — observed vs predicted 
 #    Significant tests selected automatically, ordered by R descending
 # =============================================================================
 
