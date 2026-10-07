@@ -7,7 +7,6 @@
 % Output: Ignition100_HCP_4runs.mat — stdevokedintegS, mevokedintegS,
 %         varevokedintegS (NodesxSubjects matrices)
 %
-% Reference: Deco & Kringelbach (2017) Neuron 94:961-968
 % =========================================================================
 
 clear;
