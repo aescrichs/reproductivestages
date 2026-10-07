@@ -5,7 +5,7 @@ Brain dynamics → reproductive stage prediction (HCP-A women, N=328)
 Pipeline: StandardScaler → SelectKBest(k=10, f_regression) → XGBoost
 Cross-validation: 10-fold nested CV (n_iter=20 inner RandomizedSearchCV)
 Statistics: Pearson R
-Figure: scatter observed vs predicted (Nature Aging style)
+Figure: scatter observed vs predicted
 """
 
 import numpy as np
