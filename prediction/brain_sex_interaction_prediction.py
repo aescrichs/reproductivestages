@@ -84,7 +84,7 @@ y_all   = y_all[valid_rows]
 sex_all = sex_all[valid_rows]
 
 # =============================================================================
-# 2. BUILD FEATURE MATRIX (nodes + sex + interaction)
+# 2. BUILD FEATURE MATRIX
 # =============================================================================
 
 # Interaction term is a deterministic transformation — no data leakage
@@ -181,7 +181,7 @@ pd.DataFrame(interaction_results).to_csv(
 print("\nSaved: sex_interaction_top_features.csv")
 
 # =============================================================================
-# 5. FIGURE — observed vs predicted, color-coded by sex (Nature Aging style)
+# 5. FIGURE — observed vs predicted, color-coded by sex 
 # =============================================================================
 
 fig, ax = plt.subplots(figsize=(5, 5))
